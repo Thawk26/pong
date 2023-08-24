@@ -39,9 +39,9 @@ while run:
                 right_paddle_vel = -0.9
             if i.key == pygame.K_DOWN:
                 right_paddle_vel = 0.9
-            if i.key == pygame.K_UP:
+            if i.key == pygame.K_w:
                 left_paddle_vel = -0.9
-            if i.key == pygame.K_DOWN:
+            if i.key == pygame.K_s:
                 left_paddle_vel = 0.9
 
         if i.type == pygame.KEYUP:
@@ -60,11 +60,46 @@ while run:
         ball_x, ball_y = WIDTH/2 - radius, HEIGHT/2 - radius
         ball_vel_x, ball_vel_y = 0.7, 0.7
 
+    #paddles movement controls
+    if left_paddle_y >= HEIGHT - paddle_height:
+        left_paddle_y = HEIGHT - paddle_height
+    if left_paddle_y <= 0:
+        left_paddle_y = 0
+    if right_paddle_y >= HEIGHT - paddle_height:
+        right_paddle_y = HEIGHT - paddle_height
+    if right_paddle_y <= 0:
+        right_paddle_y = 0
+    
+    #paddle collions
+    #left paddle
+    if left_paddle_x <= ball_x <= left_paddle_x + paddle_width:
+        if left_paddle_y <= ball_y <= left_paddle_y + paddle_height:
+            ball_x = left_paddle_x + paddle_width
+            ball_x *= -1
+
+    if right_paddle_x <= ball_x <= right_paddle_x + paddle_width:
+        if right_paddle_y <= ball_y <= right_paddle_y + paddle_height:
+            ball_x = right_paddle_x
+            ball_x *= -1
+
     #movements 
     ball_x += ball_vel_x
     ball_y += ball_vel_y
     right_paddle_y += right_paddle_vel
     left_paddle_y += left_paddle_vel
+
+    
+
+    #paddles movement controls
+    if left_paddle_y >= HEIGHT - paddle_height:
+        left_paddle_y = HEIGHT - paddle_height
+    if left_paddle_y <= 0:
+        left_paddle_y = 0
+    if right_paddle_y >= HEIGHT - paddle_height:
+        right_paddle_y = HEIGHT - paddle_height
+    if right_paddle_y <= 0:
+        right_paddle_y = 0
+
 
 
     # OBJECTS
