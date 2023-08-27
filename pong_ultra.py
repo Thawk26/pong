@@ -12,7 +12,7 @@ elif ch == 2:
 
 
 
-#INITIALS
+  #INITIALS
 WIDTH, HEIGHT = 1900, 1000
 wn = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Pong_ultra")
