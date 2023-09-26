@@ -27,7 +27,7 @@ Understanding of conditional statements and logical thinking
 Python 3.x installed on your system
 Pygame library installed (version X.X.X)
 Installation
-Clone this repository to your local machine using git clone https://github.com/yourusername/pygame-pong-tutorial.git
+Clone this repository to your local machine using git clone https://github.com/Thawk26/pong.git
 Install the required dependencies by running pip install -r requirements.txt
 Usage
 Open the project in your preferred Python IDE or text editor
